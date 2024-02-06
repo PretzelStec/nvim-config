@@ -34,18 +34,19 @@
 --   on_highlights = function(highlights, colors) end,
 -- })
 
-local theme = "dark";
 
-if theme == "dark" then
-    vim.cmd("colorscheme desert")
-else 
-    vim.cmd("colorscheme tokyonight-day")
-end
+require('ayu').setup({
+    overrides = {
+        Normal = { bg = "None" },
+        ColorColumn = { bg = "None" },
+        SignColumn = { bg = "None" },
+        Folded = { bg = "None" },
+        FoldColumn = { bg = "None" },
+        CursorLine = { bg = "None" },
+        CursorColumn = { bg = "None" },
+        WhichKeyFloat = { bg = "None" },
+        VertSplit = { bg = "None" },
+    },
+})
 
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-vim.cmd("hi NvimTreeNormal guibg=NONE ctermbg=NONE")
-vim.cmd("hi NonText guibg=NONE ctermbg=NONE")
-
-
-
-
+require("ayu").colorscheme()

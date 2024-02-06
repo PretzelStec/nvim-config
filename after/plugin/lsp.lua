@@ -1,6 +1,9 @@
+require('mason').setup()
+
 local nvim_lsp = require('lspconfig')
 local servers = { 
     "tsserver",
+    "clangd"
 }
 
 local on_attach = function(client, bufnr)
